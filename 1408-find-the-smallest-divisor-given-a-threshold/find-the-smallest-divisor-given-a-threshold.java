@@ -10,8 +10,7 @@ class Solution {
             int mid = lo+(hi-lo)/2;
             int sum = 0;
             for(int i=0;i<n;i++){
-                int temp = (int)Math.ceil((double)arr[i]/mid);
-                sum+=temp;
+                sum+= (arr[i] + mid - 1) / mid;
             }
             if(sum>threshold) lo = mid+1;
             else{
