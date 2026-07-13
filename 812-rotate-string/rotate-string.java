@@ -4,6 +4,7 @@ class Solution {
 
         // if(ans.contains(goal)) return true;
         // return false;
+        
         if(s.length()!=goal.length()) return false;
         return ans.contains(goal);
     }
