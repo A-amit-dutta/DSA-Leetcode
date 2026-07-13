@@ -1,19 +1,77 @@
-<!-- COMMITDSA_START -->
-# DSA Portfolio
+# 🚀 DSA Portfolio
 
-Welcome to my DSA solutions portfolio! This repository contains my solved problems on LeetCode and GeeksforGeeks, synchronized automatically using [CommitDSA](https://github.com/aprshubh/CommitDSA).
+> A curated collection of my Data Structures & Algorithms solutions solved on **LeetCode** and **GeeksforGeeks**, automatically maintained using **CommitDSA**.
 
-## Statistics
+## 📌 About
 
-| Platform | Total Solved | Easy | Medium | Hard |
-| --- | --- | --- | --- | --- |
-| LeetCode | 0 | 0 | 0 | 0 |
-| GeeksforGeeks | 1 | 1 | 0 | 0 |
-| **Total** | **1** | **1** | **0** | **0** |
+This repository documents my journey of strengthening problem-solving skills through consistent DSA practice. It contains solutions implemented in **Java**, organized by platform and difficulty level.
 
-## Solved Problems
+### 🎯 Goals
 
-| # | Problem | Platform | Difficulty | Language | Code |
-| --- | --- | --- | --- | --- | --- |
-| 1 | [Segregate 0s and 1s](https://practice.geeksforgeeks.org/problems/segregate-0s-and-1s5106/1) | GeeksforGeeks | Easy | JAVA | [Code](./GFG/Easy/0_Segregate0sAnd1s.java) |
-<!-- COMMITDSA_END -->
+- Improve problem-solving skills
+- Master core Data Structures & Algorithms
+- Prepare for Software Engineering interviews
+- Maintain consistency through daily practice
+
+
+## 📂 Repository Structure
+
+```
+.
+├── LeetCode
+│   ├── Easy
+│   ├── Medium
+│   └── Hard
+│
+├── GFG
+│   ├── Easy
+│   ├── Medium
+│   └── Hard
+│
+└── README.md
+```
+
+---
+
+## 💻 Tech Stack
+
+- **Language:** Java
+- **Platforms:** LeetCode, GeeksforGeeks
+- **Version Control:** Git & GitHub
+- **Automation:** CommitDSA
+
+---
+
+## 📈 Current Focus
+
+- Arrays & Strings
+- Two Pointers
+- Binary Search
+- Linked Lists
+- Trees
+- Graphs
+- Dynamic Programming
+
+---
+
+## 🎯 Roadmap
+
+- [x] Start DSA journey
+- [x] Solve first LeetCode problem
+- [x] Solve first GeeksforGeeks problem
+- [ ] 100+ Problems
+- [ ] 250+ Problems
+- [ ] 500+ Problems
+- [ ] Complete Striver's A2Z Sheet
+- [ ] Master Graphs & Dynamic Programming
+
+---
+
+## 🤝 Connect With Me
+
+- **GitHub:** https://github.com/yourusername
+- **LinkedIn:** https://linkedin.com/in/yourusername
+
+---
+
+⭐ If you find this repository helpful, consider giving it a star!
