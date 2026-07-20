@@ -13,7 +13,7 @@ class Solution {
         Set<Integer> st = new HashSet<>();
 
         for (int values : mpp.values()) {
-                st.add(values);
+            st.add(values);
         }
         return mpp.size()==st.size();
 
