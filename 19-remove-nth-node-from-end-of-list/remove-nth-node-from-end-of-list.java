@@ -18,12 +18,11 @@ class Solution {
             cnt++;
             temp = temp.next;
         }
-        
+
         n = cnt - n + 1;
         if (head == null)
             return head;
         if (n == 1) {
-            ListNode t = head;
             return head.next;
         }
         
