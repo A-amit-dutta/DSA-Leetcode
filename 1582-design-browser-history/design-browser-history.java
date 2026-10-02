@@ -1,8 +1,9 @@
-class Node{
+class Node {
     String val;
     Node next;
     Node prev;
-    Node(String val){
+
+    Node(String val) {
         this.val = val;
         this.next = next;
         this.prev = prev;
@@ -11,35 +12,32 @@ class Node{
 
 class BrowserHistory {
 
-    Node current = null;
+    Node current ;
+
     public BrowserHistory(String homepage) {
         current = new Node(homepage);
     }
-    
+
     public void visit(String url) {
         Node newNode = new Node(url);
         current.next = newNode;
         newNode.prev = current;
         current = current.next;
     }
-    
+
     public String back(int steps) {
-        while(steps>0){
-            if(current.prev != null)
-                current = current.prev;
-            else
-                break;
+        while (steps > 0 && current.prev != null) {
+
+            current = current.prev;
             steps--;
         }
         return current.val;
     }
-    
+
     public String forward(int steps) {
-        while(steps>0){
-            if(current.next != null)
-                current = current.next;
-            else
-                break;
+        while (steps > 0 && current.next != null) {
+
+            current = current.next;
             steps--;
         }
         return current.val;
