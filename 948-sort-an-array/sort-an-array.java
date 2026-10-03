@@ -1,40 +1,36 @@
 class Solution {
-    public static void merge(int[] arr,int lo,int mid,int hi){
-        int left = lo;
-        int right = mid+1;
-        ArrayList<Integer> al = new ArrayList<>();
-        while(left<=mid && right <= hi){
-            if(arr[left]>=arr[right]){
-                al.add(arr[right]);
-                right++;
-            }
-            else{
-                al.add(arr[left]);
-                left++;
-            }
-        }
-        while(left<=mid){
-            al.add(arr[left]);
-            left++;
-        }
-        while(right<=hi){
-            al.add(arr[right]);
-            right++;
-        }
-        for(int i=lo;i<=hi;i++){
-            arr[i] = al.get(i-lo);
-        }
-    }
-    
-    public static void mergeSort(int[] arr,int lo,int hi){
-        if(lo>=hi) return;
-        int mid = (lo+hi)/2;
-        mergeSort(arr,lo,mid);
-        mergeSort(arr,mid+1,hi);
-        merge(arr,lo,mid,hi);
-    }
     public int[] sortArray(int[] nums) {
-         mergeSort(nums,0,nums.length-1);
+        int n = nums.length;
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heapify(nums, n, i);
+        }
+
+        for (int i = n - 1; i > 0; i--) {
+            int temp = nums[0];
+            nums[0] = nums[i];
+            nums[i] = temp;
+            heapify(nums, i, 0);
+        }
         return nums;
+    }
+
+    private void heapify(int[] nums, int n, int i) {
+        int largest = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+
+        if (left < n && nums[left] > nums[largest]) {
+            largest = left;
+        }
+        if (right < n && nums[right] > nums[largest]) {
+            largest = right;
+        }
+
+        if (largest != i) {
+            int temp = nums[i];
+            nums[i] = nums[largest];
+            nums[largest] = temp;
+            heapify(nums, n, largest);
+        }
     }
 }
