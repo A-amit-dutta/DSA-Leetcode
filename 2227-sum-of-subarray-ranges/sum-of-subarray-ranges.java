@@ -1,8 +1,8 @@
 class Solution {
 
-    static Stack<Integer> st = new Stack<>();
 
     public int[] nsl(int[] arr) {
+        Stack<Integer> st = new Stack<>();
         int n = arr.length;
         int nsl[] = new int[n];
         for (int i = 0; i < n; i++) {
@@ -16,6 +16,7 @@ class Solution {
     }
 
     public int[] nsr(int[] arr) {
+        Stack<Integer> st = new Stack<>();
         int n = arr.length;
         int[] nsr = new int[n];
         for (int i = n - 1; i >= 0; i--) {
@@ -30,6 +31,7 @@ class Solution {
 
 
     public int[] prevGreater(int[] arr) {
+        Stack<Integer> st = new Stack<>();
         int n = arr.length;
         int[] prevGreater = new int[n];
         for (int i = 0; i < n; i++) {
@@ -43,6 +45,7 @@ class Solution {
     }
 
     public int[] nextGreater(int[] arr) {
+        Stack<Integer> st = new Stack<>();
         int n = arr.length;
         int[] nextGreater = new int[n];
         for (int i = n - 1; i >= 0; i--) {
@@ -58,13 +61,13 @@ class Solution {
     public long subArrayRanges(int[] nums) {
         int n = nums.length;
         int[] nsl = nsl(nums);
-        st.clear();
+        
         int[] nsr = nsr(nums);
-        st.clear();
+       
         int[] prevGreater = prevGreater(nums);
-        st.clear();
+        
         int[] nextGreater = nextGreater(nums);
-        st.clear();
+        
 
         long total = 0;
         for(int i=0;i<n;i++){
