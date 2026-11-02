@@ -1,10 +1,10 @@
 class Solution {
-    public int removeDuplicates(int[] arr) {
-        int k = 0, n = arr.length;
-        for (int i = 0; i < n; i++) {
-            if (k < 2 || arr[i] != arr[k - 2]) {
-                arr[k] = arr[i];
-                k++;
+    public int removeDuplicates(int[] nums) {
+        int k = 2 , n = nums.length;
+        if(n <= 2) return n;
+        for(int i=2;i<n;i++){
+            if(nums[i] != nums[k-2]){
+                nums[k++] = nums[i];
             }
         }
         return k;
