@@ -10,15 +10,15 @@
  */
 class Solution {
     public ListNode modifiedList(int[] nums, ListNode head) {
-        Map<Integer, Integer> mpp = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            mpp.put(nums[i],nums[i]);
+        Set<Integer> set = new HashSet<>();
+        for (int x : nums) {
+            set.add(x);
         }
         ListNode dummy = new ListNode(-1);
         ListNode t = dummy;
         ListNode temp = head;
         while(temp!=null){
-            if(!mpp.containsKey(temp.val)){
+            if(!set.contains(temp.val)){
                 t.next = temp;
                 t = t.next;
             }
