@@ -1,36 +1,41 @@
 class Solution {
-    public int[] sortArray(int[] nums) {
-        int n = nums.length;
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            heapify(nums, n, i);
+
+    public void merge(int[] arr, int[] temp, int lo, int mid, int hi) {
+        int left = lo, right = mid + 1;
+        int k = lo;
+        while (left <= mid && right <= hi) {
+            if (arr[left] > arr[right]) {
+                temp[k++] = arr[right++];
+            } else {
+                temp[k++] = arr[left++];
+            }
         }
 
-        for (int i = n - 1; i > 0; i--) {
-            int temp = nums[0];
-            nums[0] = nums[i];
-            nums[i] = temp;
-            heapify(nums, i, 0);
+        while (left <= mid) {
+            temp[k++] = arr[left++];
         }
-        return nums;
+        while (right <= hi) {
+            temp[k++] = arr[right++];
+        }
+        for (int i = lo; i <= hi; i++) {
+            arr[i] = temp[i];
+        }
     }
 
-    private void heapify(int[] nums, int n, int i) {
-        int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
+    public void mergesort(int[] arr, int[] temp, int lo, int hi) {
+        if (lo >= hi)
+            return;
+        int mid = lo + (hi - lo) / 2;
 
-        if (left < n && nums[left] > nums[largest]) {
-            largest = left;
-        }
-        if (right < n && nums[right] > nums[largest]) {
-            largest = right;
-        }
+        mergesort(arr, temp, lo, mid);
+        mergesort(arr, temp, mid + 1, hi);
+        merge(arr, temp, lo, mid, hi);
+    }
 
-        if (largest != i) {
-            int temp = nums[i];
-            nums[i] = nums[largest];
-            nums[largest] = temp;
-            heapify(nums, n, largest);
-        }
+    public int[] sortArray(int[] nums) {
+        int[] temp = new int[nums.length];
+        int n = nums.length;
+        mergesort(nums, temp, 0, n - 1);
+        return nums;
     }
 }
